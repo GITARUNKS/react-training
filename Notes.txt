@@ -1,0 +1,149 @@
+Single Page Application:
+------
+7 Characteristics
+    1. Page should not refresh
+    2. URL should change
+    3. History should be maintained w/o page refresh.
+    4. Retain Header and Setter
+    5. Section in between header and footer 
+    6. Active menu should be set
+    7. Page title should also be updated
+
+Component
+-------
+    * Reusable block of code.
+
+2 Types of Component
+-------
+    * Functional Component (Recommended)
+        - created with functions.
+            1.1. Functional component with Named function
+            1.2. Functional component with Anonymous function
+            1.3. Functional component with Arrow function [Recommended]
+
+    * Class Component (NOT Recommended since 2020)
+        - created with class in js.
+
+Thinking in React
+--------
+    0. Identify the number of Components.
+    1. Understand the hierarchy of the Components.
+
+
+JSX
+----
+    * All tags must be self closed or separately closed.
+    * All class attribute should become className
+
+Features:
+----
+    * Netflix
+    * CRU(D) App
+    * To Do App
+    * E-Commerce App (Prod list & Add to Cart)
+    * Authentication
+
+================
+
+Casing Types
+-------
+    1. PascalCase
+        * OOP's class
+        * Interface in TypeScript
+        * Components in React and Component Folders in React
+    2. camelCase
+        * Recommended for variables, const, functions, methods in JS and TS
+        * Recommended for id's of HTML elements
+        * Recommended for variables, const, fn, methods, event handlers of React Component
+    3. kebab-case
+        * Recommended for URLs
+        * Recommended for file names, folder names, assets in front end projects
+        * Recommended for css classes
+        * okay for id's of HTML elements if your architect says ok
+    4. snake_case
+        * never ever use this
+        * exceptional usage for const
+        const MAX_STUDENTS_PER_CLASS = 5;
+
+Cross Component Communication
+--------
+    1. Parent to Child Component Communication
+        - using Props
+
+    2. Child to Parent Component Communication
+        - using Props with Events and callback function
+
+    3. Any to Any Component Communication
+        3.1 using Context API in React JS
+        3.2 using Redux / Redux-Toolkit / zustand / recoil / MobX / Flux (not used anymore)
+        3.3 using 
+
+Core Concepts of React
+---------
+    Props
+    States
+    Events
+    Lists & Keys
+    Conditional Rendering
+    Styling
+
+Routing
+-----
+    Basic Routes
+        * URL
+        * URL Parameter
+        * Query Parameter
+    Nested Routing
+
+Project Structure
+--------
+src/
+   layouts/
+        - Header.tsx
+        - Footer.tsx
+   components/ (only reusable  components in multiple features / pages)
+        - MenuList.tsx
+   pages/
+      HomePage/
+        - HomePage.tsx
+      NetflixPage/
+        - NetflixPage.tsx
+      AuthPage/
+        - AuthPage.tsx
+        - Login.tsx
+        - Signup.tsx
+        - ResetPassword.tsx
+        - VerifyEmail.tsx
+
+Routing in React JS:
+========
+Step 1: npm i react-router-dom
+Step 2: Let's identify the URL first
+Step 3: Set the URLs in MenuList.
+Setp 4: Check the app. URL will change. Page will refresh
+
+
+Any to Any Component Communication using Context API:
+-------
+Context is like a container which should be used to circulate data across multiple components.
+
+Step 1. Create Context [CartContext]. using createContext
+Step 2. We have the provide the context data to desired components using Context Provider.
+Step 3. Subscribe to the context data from desired component.
+Step 4. Supply the data to the context.
+
+Rules of Hook:
+------
+Hooks are a new addition in React 16.8
+1. Only Call Hooks at the Top Level
+Don’t call Hooks inside loops, conditions, or nested functions. Instead, always use Hooks at the top level of your React function, before any early returns
+2. Only Call Hooks from React Functions
+Don’t call Hooks from regular JavaScript functions. Instead, you can:
+✅ Call Hooks from React function components.
+✅ Call Hooks from custom Hooks
+
+Pending:
+----
+1. Navigating to parent page after login instead of static routing.
+2. Logout in one tab, should reflect in all other duplicate tabs.
+3. Delete Modal window

@@ -4,6 +4,7 @@ import ContactPage from '../pages/ContactPage/ContactPage';
 import ProtectedRoutes from './ProtectedRoutes';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import {Suspense, lazy} from "react";
+import UnitTestingPage from '../pages/UnitTestingPage/UnitTestingPage';
 
 const NetflixPage = lazy(() => import('./../pages/NetflixPage/NetflixPage'));
 const ProductsPage = lazy(() => import('./../pages/ProductsPage/ProductsPage'));
@@ -27,6 +28,7 @@ const MainRoutes = () => {
         }>
         < Routes >
             <Route path="/" element={<HomePage />} />
+            <Route path="/unit-testing-demo" element={<UnitTestingPage />} />
             <Route path="/about-us" element={<AboutPage />}  >
                 <Route path="team" element={<TeamPage />} />
                 <Route path="careers" element={<CareersPage />} />

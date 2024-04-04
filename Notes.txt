@@ -147,3 +147,8 @@ Pending:
 1. Navigating to parent page after login instead of static routing.
 2. Logout in one tab, should reflect in all other duplicate tabs.
 3. Delete Modal window
+
+Unit Testing:
+-----
+Steps to setup JEST and RTL [React Testing Library] in Vite based react project:
+npm install --save-dev jest babel-jest @babel/preset-env @babel/preset-react @testing-library/react @testing-library/jest-dom

@@ -61,7 +61,12 @@ const MenuList = () => {
       title: "Admin",
       isPublic: false,
     },
-
+    {
+      id: 10,
+      navigateTo: "/unit-testing-demo",
+      title: "Unit Testing Demo",
+      isPublic: true,
+    },
   ]
 
   return (

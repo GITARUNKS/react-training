@@ -22,7 +22,7 @@ i18next
       "fr": { translation: frTranslation },
       "en-UK": { translation: enUKTranslation }
     },
-    fallbackLng: 'fr',
+    fallbackLng: 'en',
     debug: true,
     interpolation: {
       escapeValue: false

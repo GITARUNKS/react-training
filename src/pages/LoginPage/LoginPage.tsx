@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 
 interface IFormLogin {
@@ -11,18 +11,18 @@ interface IFormLogin {
 const LoginPage: React.FC = () => {
     const { register, handleSubmit, formState } = useForm<IFormLogin>();
     const navigate = useNavigate();
-    const authContext = useAuthContext()
+    const location = useLocation();
+    const authContext = useAuthContext();
 
     const handleLogin: SubmitHandler<IFormLogin> = async (formData) => {
         console.log(formData);
         // The above formData should be sent to REST API
         try {
             const response = await axios.post("https://reqres.in/api/login", formData);
-            console.log(response.data);
             // the JWT token should be stored in cookie / local storage / session storage  - Doing it via useContext() 
             authContext?.saveToken(response.data.token, "SUPER_ADMIN");
             // Navigate to some page post successful login
-            navigate('/netflix'); //Static Implementation, explore for dynamic based on user's parent page
+            navigate(location.state ? location.state : "/");
         } catch (err) {
             console.log(err);
         }

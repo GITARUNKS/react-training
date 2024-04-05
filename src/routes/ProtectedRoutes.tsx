@@ -3,7 +3,7 @@ import { useAuthContext } from "../contexts/AuthContext";
 
 const ProtectedRoutes = () => {
     // Check if the user is authenticated or not
-        // How? Check in local storage.
+        // How? Check using Auth Context
     // If authenticated 
         // then, show the protected routes
     // else
@@ -15,9 +15,9 @@ const ProtectedRoutes = () => {
             <Outlet />
         )
     } else {
-        return (
-            <Navigate to="/auth/login" />
-        )
+         return (
+             <Navigate to="/auth/login" state={location.pathname} />
+         )
     }
 }
 

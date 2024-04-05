@@ -2,7 +2,7 @@
 // Arrange: Let us arrange the necessary tools for testing the component.
 //  - In this case the component itself. So import the component.
 
-import UnitTestingPage from "../../../pages/UnitTestingPage/UnitTestingPage";
+import UnitTestingPage from "../../../../pages/UnitTestingPage/UnitTestingPage";
 import { render, screen } from "@testing-library/react"; // import from RTL
 
 // Act - Let's write the test cases / specs

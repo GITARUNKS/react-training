@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialMedia has right Social Media component snapshot 1`] = `
+<div>
+  <h2
+    className="text-center"
+    role="heading"
+  >
+    Social Media Info
+  </h2>
+  <h3>
+    Demo of Testing Props, States, Events, JSX, Styles, Snapshot testing !!!
+  </h3>
+  <p>
+     Top social media platform
+  </p>
+  <p
+    data-testid="followersDetails"
+    style={
+      {
+        "backgroundColor": "#ffff00",
+      }
+    }
+  >
+    YouTube
+     with 
+    2M+
+     followers
+  </p>
+  <input
+    name="countryName"
+    onChange={[Function]}
+    placeholder="Enter a country name"
+    type="text"
+    value="India"
+  />
+  <p
+    data-testid="websiteInfo"
+  >
+    Visit Genesys 
+    India
+     website
+  </p>
+</div>
+`;

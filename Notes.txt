@@ -144,9 +144,8 @@ Don’t call Hooks from regular JavaScript functions. Instead, you can:
 
 Pending:
 ----
-1. Navigating to parent page after login instead of static routing.
-2. Logout in one tab, should reflect in all other duplicate tabs.
-3. Delete Modal window
+1. Logout in one tab, should reflect in all other duplicate tabs.
+2. Delete Modal window
 
 Unit Testing:
 -----

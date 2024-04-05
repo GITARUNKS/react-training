@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+//import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import UserCard from "./UserCard";
@@ -37,9 +37,9 @@ const UsersPage: React.FC = () => {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>Users</title>
-      </Helmet>
+      </Helmet> */}
       <div className="my-3">
         <div className="position-relative p-2 text-center text-muted bg-body border border-dashed rounded-5">
           <h1 className="text-body-emphasis">User Management App!</h1>

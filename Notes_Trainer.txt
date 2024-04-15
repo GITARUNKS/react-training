@@ -1,0 +1,780 @@
+Website / webapp can be built with
+---
+  1. Structural Layer  -- HTML
+  2. Presentation Layer -- CSS 
+  3. Interaction Layer -- JS 
+
+Browser
+----
+  HTML Renderer
+  CSS Parser 
+  JS Engine 
+
+
+Topics Not covered:
+---
+  HTML 5 JS API - Demo 
+    Local Storage, Session Storage
+
+  Storing Info in browser 
+  ---
+    1. Cookies 
+    2. Web Storage
+      2.1 LocalStorage (Permanent)
+      2.2 SessionStorage (Temporary)
+  
+
+Websites
+---
+  1. static website 
+  2. dynamic websites 
+
+Web Apps
+----
+  1. Server Side Rendering (SSR) Apps / Traditional Webapps 
+      * Pages will refresh
+
+      Arch: 1 Server (port 8080)
+        Req: localhost:8080
+        Response: HTML, CSS, JS, Data
+
+      Codebase: 
+        HTML, CSS, JS + Backend (PHP/Java/.Net) + DB Queries
+
+      Adv:
+      ----
+        1. Search Engine Friendly
+        2. Initial Loading Time will be minimal
+      
+      Disadv:
+      ----  
+        1. Server has to do the heavy-lifting
+        2. Slower Webapps 
+        3. Huge Bandwidth Consumption
+        4. Expensive 
+        5. UX is bad 
+
+  2. Client Side Rendering (CSR) Apps  / Modern Webapps = SPA + Rest API
+      * Pages will NOT Refresh
+
+      Arch:
+        2 Servers 
+          1 Front End Server (port: 3000) 
+            Req: localhost:3000
+            Response: HTML, CSS, JS, No Data (but placeholder for the data)
+          
+          1 Back End Server (port: 8081)
+            Req: localhost:8081
+            Response: Data (JSON)
+
+      Codebase:
+        Front End App: HTML, CSS, JS  (Single Page App - SPA -- We will Develop)
+        Back End App: PHP/Java/.Net + DB Queries  (RESTful API -- We wont develop)
+
+      Adv:
+      ---
+        1. Server's workload is shared between two servers 
+        2. Faster Web apps 
+        3. Less Bandwidth Consumption
+        4. Not Expensive 
+        5. UX is good 
+
+      Disadv:
+      ---
+        1. Not Search Engine Friendly (can be fixed with Next Js)
+        2. Initial Loading will take longer (can be fixed)
+
+
+Single Page App 
+-----
+  7 characteristics
+
+  1. Pages should NOT refresh
+  2. URL should change 
+  3. History should be maintained w/o page refresh 
+  4. Retain Header and Footer
+  5. Section in between header and footer should show contextual updates
+  6. Active menu should be set 
+  7. Page Title should also be updated 
+
+
+  SPA Frameworks / Libraries 
+  -------
+    #1 React JS (Library -- Build User Interface)
+    #2 VueJS (Framework)
+    #3 Angular (Framework)
+    #4 Svelte (Framework)
+
+=============
+
+Progressive Web App (PWA)
+-----
+  * Installable Web App in Desktops (win/mac/linux) and Mobiles (android)
+  * No support for PWA in iOS 
+
+
+2 Ways to create react project 
+---
+  1. with JavaScript 
+  2. with TS (Recommended)
+
+Build Systems / Module Bundlers 
+-----
+  1. webpack (Recommended)
+  2. vite (Modern)
+
+Create project 
+====
+  npm create vite@latest 
+
+----
+File Walkthru [DONE]
+Arch [DONE]
+How react apps are running? [DONE]
+
+
+Thinking in React
+-----
+  1. Identify the number of components 
+  2. Understand the hierarchy of the components
+  3. other concepts
+
+
+Components
+-----
+  * Reusable block of code 
+
+  2 Types of Components in React 
+  -----
+    1. Functional Components (Recommended)
+        * created with functions 
+        1.1 Functional Component with Named Function 
+        1.2 Functional component with Anonymous function
+        1.3 Functional component with Arrow function [RECOMMENDED]
+
+    2. Class Components (NOT Recommended since 2020)
+        * quick intro
+        * created with class
+
+JSX 
+---
+  * will look like HTML but not
+  * all tags must be either self closed / separately closed 
+  * all class attributes should become className
+  * multiple children elements should be grouped in a parent element or Fragment
+
+======
+Naming Conventions & Casing 
+----
+  Casing Types 
+  --------
+    1. PascalCase 
+        * Recommended for Object Oriented Program's classes 
+        * also Recommended for Interface in TypeScript 
+        * Recommended for React Components and the folder of Components
+
+        examples 
+        ---
+          class CarDetails {
+
+          }
+
+          interface Employee {
+
+          }
+
+          const MenuList = () =>  { // functional component
+            // returns JSX
+          }
+
+          export default Footer;
+
+    2. camelCase 
+        * Recommended for variables, const, functions, methods in JS & TS 
+        * Recommended for id's of html elements 
+        * Recommended for variables, const, fn, methods, event handlers of React Component
+        
+        examples 
+        -----
+          var myCar = 'BMW';
+          var isLoggedIn = true;
+
+          function getCarInfo() {
+            //....
+          }
+    
+    3. kebab-case
+        * Recommended for URLs 
+        * Recommended for file names, folder names, assets in front end projects  
+        * Recommended for css classes 
+        * okay for id's of html elements if your architect says ok
+
+        examples 
+        -----
+          btn-primary
+          slideshow-container 
+          youtube-logo.png 
+
+    4. snake_case 
+        * never ever use this. 
+        * okay for const in JS & TS if architect accepts
+
+        examples
+        ---
+          const MAX_STUDENTS_PER_CLASS = 30;
+
+----------------
+
+
+Cross Component Communication
+----
+  1. Parent to Child Component Communication [DONE]
+      using Props 
+
+  2. Child to Parent Component Communication [TODO]
+      using Props with Events and callback function 
+
+  3. Any to Any Component Communication
+      3.1 using Context API in React JS
+      3.2 using Redux / Redux-Toolkit / zustand / MobX / recoil / Flux
+
+
+Core Concepts of React 
+----
+  Props [DONE]
+  States [DONE]
+  Events [DONE]
+  Lists & Keys [DONE]
+  Conditional Rendering [DONE]
+  Styling [DONE]
+
+Routing
+----  
+  Basic Routes [DONE]
+    * url [DONE]
+    * url param [DONE]
+    * query param [DONE]
+  Nested Routing [TODO]
+
+Advanced Concepts 
+----
+  Forms [DONE]
+  API Calls [DONE]
+  Context 
+  Fragments [DONE]
+  Hooks 
+    useState [DONE]
+    useEffect [DONE]
+
+    useReducer [DONE]
+    useRef [DONE]
+
+    useContext [DONE]
+
+    Custom Hook [DONE]
+  ...
+  ...
+
+Rules of Hooks 
+---
+  1. Only Call Hooks at the Top Level
+      Don’t call Hooks inside loops, conditions, or nested functions. 
+  2. Only Call Hooks from React Functional components
+      Don’t call Hooks from regular JavaScript functions.
+
+
+Features
+---
+  1. Netflix [DONE]
+  2. CRU(D) App  (User management app) [DONE]
+  3. Todo App  [DONE]
+  4. E-Com Style of App (Product Listing & Add to cart) [DONE]
+  5. Authentication & Authorization [DONE]
+
+
+Other Topics
+---
+  i18n and l10n [DONE]
+  Debugging [DONE]
+  Error Boundary [DONE]
+  Lazy Loading and Suspense [DONE]
+  Performance Tuning [DONE]
+  build and deployment [DONE]
+  unit testing [Thursday and Friday]
+  
+  Redux-toolkit [Later]
+
+
+Project Structure
+------
+__tests__/
+  unit-tests/
+    layouts/
+      Header.test.tsx
+  e2e/
+src/
+  layouts/
+    Header.tsx 
+    Footer.tsx 
+    MenuList.tsx
+  components/   (only reusable components in multiple features / pages )
+  pages/
+    HomePage/
+      HomePage.tsx
+    NetflixPage/
+      NetflixPage.tsx 
+    UserManagementPage/
+      UserManagementPage.tsx
+    TodoPage/
+      TodoPage.tsx 
+    ProductsPage/
+      ProductsPage.tsx 
+    AuthPage/
+      AuthPage.tsx
+      Login.tsx 
+      Signup.tsx 
+      ResetPassword.tsx 
+      VerifyEmail.tsx
+   hooks/
+   contexts/
+   models/   (can have interfaces for the whole app)
+    IShow.tsx
+
+
+SPA characteristics
+-------
+
+1. Pages should NOT refresh [DONE]
+2. URL should change [DONE]
+3. History should be maintained w/o page refresh [DONE]
+4. Retain Header and Footer [DONE]
+5. Section in between header and footer should show contextual updates [DONE]
+6. Active menu should be set [TODO]
+7. Page Title should also be updated [TODO]
+    Refer: https://www.npmjs.com/package/react-helmet-async
+
+Routing in ReactJS
+----  
+  Step 1: 
+    npm i react-router-dom
+
+    3 types of router concepts (BrowserRouter, HashRouter, MemoryRouter)
+  
+  Step 2: 
+    Let's Identify the urls for the menus 
+      Home             localhost:3000/
+      Netflix          localhost:3000/netflix
+      Manage Users     localhost:3000/users
+      Todos            localhost:3000/todos
+      Products         localhost:3000/products
+      About            localhost:3000/about-us
+      Contact          localhost:3000/contact-us
+      Login            localhost:3000/login
+
+  Step 3: Let's setup the above urls in MenuList.
+
+  Step 4: Check the app. URL will change. Page will refresh. 
+    For the above menus to work we need the necessary components
+
+    Let's find out matching components for the urls
+
+    localhost:3000/             HomePage            
+    localhost:3000/netflix      NetflixPage          
+    localhost:3000/users        UsersPage            
+    localhost:3000/todos        TodosPage            
+    localhost:3000/products     ProductsPage         
+    localhost:3000/about-us     AboutPage            
+    localhost:3000/contact-us   ContactPage           
+    localhost:3000/login        LoginPage            
+
+    Let's create the necessary components
+
+  Step 5: 
+  ----
+    The whole app should be under the control of BrowserRouter of react-router-dom 
+
+    Then, Let's config the routes in App component in b/w header and footer 
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/netflix" element={<NetflixPage />} />
+        <Route path="/users" element={<UsersPage />} />
+        <Route path="/about-us" element={<AboutPage/>} />
+      </Routes>
+    
+  Step 6: 
+  ---
+    Check the app. Pages are still refreshing. Let's fix. 
+    Replace all a href with Link to of 'react-router-dom'
+
+    like the following 
+    <Link className="nav-link active" to="/">
+      Home
+    </Link>
+
+
+-----
+
+
+Users Management CRUD App 
+----
+C
+  Add User      localhost:3000/users/add        AddUser
+
+R
+  List Users    localhost:3000/users            UsersPage 
+
+R
+  User Details  localhost:3000/users/1          UsersDetails
+
+U
+  User Details  localhost:3000/users/1/edit     EditUser
+
+D
+  Delete Details  localhost:3000/users/1        UsersDetails
+
+
+Http methods
+---
+GET   - fetching data 
+POST  - creating data 
+PUT /PATCH -- updating data 
+DELETE -- deleting data 
+
+
+Reducer
+----
+  * is function that must take in two params (state, action)
+  * this fn must return state 
+
+  * action is an object. 
+    * it must have type property 
+    * it can have payload property, which is optional
+
+    const action = {
+      type: '',
+      payload: 'dafgdhgfhjghdffghgj"  // optional
+    }
+
+possible action types in a todos app
+  * GET_TODOS 
+  * ADD_TODO 
+  * EDIT_TODO 
+  * DELETE_TODO
+  * COMPLETE_TODO
+  * SEARCH_TODOS
+
+
+  function xyz(state, action) {
+    // based on the action type 
+    return state;
+  }
+
+
+
+Component Re-Rendering Related
+====
+  In Normal Scenario
+  -------
+    To prevent unnecessary re-renders in functional components when using React, 
+    you can use React.memo. 
+    React.memo is a higher-order component that will only re-render the 
+    wrapped component if its props have changed. 
+    This is useful for optimizing performance in scenarios 
+    where a parent component's state change doesn't necessarily affect the child component.
+
+    Use React.memo to prevent a component from re-rendering unless its props change.
+
+    React.memo and useMemo are not SAME.
+    Also Learn about useCallback 
+
+    Example with React.Memo
+    ---
+      import React from 'react';
+
+      // ChildComp1 defined as a functional component wrapped with React.memo
+      const ChildComp1 = React.memo((props) => {
+        console.log('Rendering ChildComp1');
+        // Your component logic
+        return (
+          <div>
+            {/* Your component UI */}
+            Child Component Content
+          </div>
+        );
+      });
+
+      export default ChildComp1;
+
+
+  In Context API 
+  ----
+  In React, a component will re-render in response to context changes only 
+  if it directly uses the context value that has changed. 
+
+=====
+
+
+Reference For useCallback hook:
+  https://github.com/arunprabu/netflix-plus-bosch-nov2023/blob/master/src/components/NewsMedia.tsx
+
+Reference For useMemo hook:
+  https://github.com/arunprabu/netflix-plus-bosch-nov2023/blob/master/src/components/SquareCalculator.tsx
+
+both are used here. 
+  https://github.com/arunprabu/netflix-plus-bosch-nov2023/blob/master/src/pages/AboutPage.tsx
+
+=============
+
+i18n 
+---
+  Making sure the website's content showing up in multiple languages
+  Making sure your website content is accessible to different language groups across globe .
+
+  en: red color, center, 
+  fr: couleur rouge
+
+l10n 
+---
+  Making sure the website's content is showing up for specific region. (locale-specific)
+  Making sure your website content is localized for different regions of same language group 
+
+  uk: red colour, centre
+  au: red color, 
+  in: red color
+  us: red color
+
+npm i i18next react-i18next i18next-browser-languagedetector
+
+Build Checklist
+----
+  0 console errors 
+  0 console warning 
+
+  check all functionalities 
+  fix all linting errors
+  0 linting errors 
+
+  remove all console.logs 
+  remove js based alert
+  remove debugger
+
+
+  Now, take a build 
+  ---
+    npm run build 
+    
+====
+
+SDLC 
+---
+  analysis 
+    design 
+      development 
+        testing 
+          deployment 
+            maintenance 
+
+Dev => QA => (bugs) => Dev => QA => (bugs) => Dev => QA => (bugs) => Dev => QA => (QA PASSED) => Deployment
+
+Calc 
+---
+  Resources: FRD, User Stories, Designs 
+
+  add feature
+  ----
+
+    Development
+    ----
+      Reference: Test cases 
+      #1: add should receive params of type number 
+      #2: add should return data of type number 
+      #3: add button should be disabled if invalid inputs entered. 
+
+      function add(a: number, b: number): number{
+        return a + b;
+      }
+
+      add(10, 20); // 30
+
+      Tools: JEST, RTL 
+
+======
+
+(Dev writes test cases ) => (Dev writes the fn code) => [TOOLS] => PASSED => DEPLOYMENT
+
+
+Automation Testing 
+-----
+  4 Levels of Testing 
+  ---------
+    0. Static Type Checking 
+      * checking the data type of variables, functions, arguments, return types 
+      Tool: TypeScript / Flow JS
+
+    1. Unit Testing (To Learn)
+        * testing small unit of a component 
+        * testing independent unit of a component
+        * testing in isolation (without connecting to rest api )
+
+        Tools: JEST (Framework and Test Runner) + React Testing Library (RTL)
+
+    2. Integration Testing 
+        * testing modules together 
+        * testing by connecting to rest api 
+
+        Tools: JEST (Framework and Test Runner) + React Testing Library (RTL)
+    
+    3. End to End Testing (E2E)
+        * testing the whole app 
+        * mostly carried out by QA team 
+
+        Tools: CypressJS, Selenium, Protractor, Cucumber, Playwright
+
+  2 Testing Methodologies 
+  -----------------
+    1. Test Driven Development (TDD)   [TO LEARN]
+        * write NEW CODE only if automated test fails 
+
+        Dev writes test cases => (failure) => Dev writes fn code => (SUCCESS) => [CODE COMPLETE]
+
+        Test Pattern: AAA 
+        Tools: JEST + RTL 
+
+    2. Behavior Driven Development (BDD) [NOT TO LEARN]
+        * app is documented, designed around the behavior the end user wants to experience when they interact with it.
+
+        Dev writes test cases around the behavior end user wants to see => (failure) => Dev writes fn code => (SUCCESS) => [CODE COMPLETE]
+        Test Pattern: Given, When, Then 
+        Tools: Jasmine
+
+
+  2 Test Patterns 
+  --------------
+    1. AAA (Arrange, Act, Assert) [TO LEARN]
+    2. Given, When, Then  [NOT TO LEARN]
+
+
+  2 Testing Tools 
+    JEST (Testing Framework and also Test runner)
+    RTL (Testing Utility for DOM Querying)
+
+==============
+
+
+Steps to Setup JEST and RTL in react project based vite
+  Step 1. 
+    npm i --save-dev jest babel-jest @babel/preset-env @babel/preset-react 
+    npm i --save-dev @testing-library/react @testing-library/jest-dom ts-jest jest-environment-jsdom
+    npm i --save-dev @types/jest
+
+  Step 2: Configure Babel 
+    create .babelrc file in root of the project.
+    with the following lines in it 
+
+    {
+      "presets": ["@babel/preset-env", "@babel/preset-react"]
+    }
+
+  Step 3: Config JEST
+    create jest.config.js file with the following code 
+
+    export default {
+      testEnvironment: "jsdom",
+      transform: {
+        "^.+\\.tsx?$": "ts-jest"
+      },
+      moduleNameMapper: {
+        "\\.(css|less|sass|scss)$": "identity-obj-proxy"
+      },
+      setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
+      transformIgnorePatterns: ["/node_modules/(?!(axios)/)"],
+      collectCoverageFrom: [
+        "src/lib/**/*.{js,jsx,ts,tsx}",
+        "!<rootDir>/node_modules/",
+        "!<rootDir>/config/",
+        "!<rootDir>/src/stories/*.{js,jsx,ts,tsx}",
+        "!<rootDir>/src/main.tsx",
+        "!<rootDir>/src/lib/**/index.tsx" // Exclude all index.tsx files within /lib
+      ],
+      coverageDirectory: "<rootDir>/docs/coverage", // Specifying the output directory here
+      coverageThreshold: {
+        global: {
+          branches: 80,
+          functions: 80,
+          lines: 80,
+          statements: 80
+        }
+      }
+    };
+
+  Step 4:
+  ----
+    in src/setupTests.ts file, have the following 
+    import '@testing-library/jest-dom';
+
+  Step 5: 
+    Have necessary scripts in package.json 
+
+    "scripts": {
+      "dev": "vite",
+      "test": "jest --watch", // Add this line 
+      "build": "tsc && vite build",
+      "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+      "preview": "vite preview"
+    },
+
+  Step 6: 
+    Try 
+      npm run test 
+
+Learn about which RTL API to use? 
+https://testing-library.com/docs/queries/about/#priority
+
+======
+Topics 
+---
+  Testing JSX [DONE]
+    Testing Props [DONE]
+    Testing Styles 
+      Testing Inline Styles [DONE]
+      Testing CSS Class (TODO)
+    Testing Events [DONE]
+      https://github.com/arunprabu/react-unit-testing-sep2022-batch2/blob/master/src/components/Counter/Counter.test.js
+    Testing States [DONE]
+
+    Snapshot Testing [DONE]
+      DO NOT TRY THIS FOR THE FOLLOWING 
+      ---
+        1. If the component has dynamic data 
+        2. When the component is incomplete
+
+    Testing Reducers [Repo Link]
+      https://github.com/arunprabu/react-unit-testing-sep2022-batch2/blob/master/src/components/Reminders/Reminders.test.js
+    Testing Contexts [Repo Link]
+      https://github.com/arunprabu/react-unit-testing-sep2022-batch2/blob/master/src/components/MyProfile/MyProfile.test.js
+
+    Testing Forms [TODO: Repo Link]
+      https://github.com/arunprabu/react-unit-testing-sep2022-batch2/blob/master/src/components/ContactForm/ContactForm.test.js
+
+    Testing Routes [TODO]
+
+  Testing API 
+    Mocks [DONE]
+    Spies [MONDAY]  
+      Refer: https://github.com/arunprabu/react-unit-testing-sep2022-batch2/tree/master/src/components/Posts
+      
+    Stubs [TODO]
+
+  Code Coverage [MONDAY]
+  ----
+    npm run coverage 
+
+
+/* 3 Challenges / Disadv of Testing the component with Rest API calls
+  1. Time consuming
+  2. Availability of REST API is a concern (may be in dev, may be down)
+  3. No guarantee for the sample data like this 'delectus aut autem' to be present
+*/ 
+
+
+  

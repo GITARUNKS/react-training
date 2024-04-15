@@ -27,11 +27,11 @@ describe("UsersPage", () => {
 
     mockedAxios.get.mockResolvedValue({ data: userList });
     render(
-        <HelmetProvider>
       <BrowserRouter>
-        <UsersPage />
+        <HelmetProvider>
+          <UsersPage />
+        </HelmetProvider>
       </BrowserRouter>
-      </HelmetProvider>
     );
 
     expect(await screen.findByText(/John/i)).toBeInTheDocument();
@@ -46,7 +46,9 @@ describe("UsersPage", () => {
     mockedAxios.get.mockRejectedValue("");
     render(
       <BrowserRouter>
-        <UsersPage />
+        <HelmetProvider>
+          <UsersPage />
+        </HelmetProvider>
       </BrowserRouter>
     );
 

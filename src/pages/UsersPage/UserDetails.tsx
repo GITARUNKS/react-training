@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "react-router-dom";
 import { IUser } from "../../models/UserTypes";
@@ -29,9 +29,9 @@ const UserDetails: React.FC = () => {
       setLoading(false);
     }
   }
-  useState(() => {
+  useEffect(() => {
     getUserDetails();
-  });
+  },[]);
 
   const handleDeleteUser = async () => {
     try {
@@ -105,7 +105,7 @@ const UserDetails: React.FC = () => {
                 data-bs-toggle="modal"
                 data-bs-target="#deleteUserModal"
               >
-                Delete (TODO)
+                Delete
               </button>
               <div
                 className="modal fade"
